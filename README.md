@@ -8,7 +8,7 @@ Provided that your main input file is located in the current working directory,
 you can run `pdflatex` as follows:
 
 ```sh
-docker run -ti -v miktex:/var/lib/miktex -v `pwd`:/miktex/work -e MIKTEX_UID=`id -u` miktex/miktex:essential \
+docker run -ti -v miktex:/var/lib/miktex -v "$(pwd):/miktex/work" -e MIKTEX_UID=$(id -u) miktex/miktex:essential \
     pdflatex main.tex
 ```
 
